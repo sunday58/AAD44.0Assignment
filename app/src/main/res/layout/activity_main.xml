@@ -8,6 +8,44 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/black">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LEADERBOARD"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_marginTop="18dp"
+                android:layout_marginStart="12dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                app:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:cornerRadius="45dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="Submit"
+                android:textAllCaps="false"/>
+
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
 <androidx.viewpager.widget.ViewPager
     android:id="@+id/viewPager"
     android:layout_width="match_parent"
