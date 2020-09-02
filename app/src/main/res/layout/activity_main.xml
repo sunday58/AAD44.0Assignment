@@ -67,7 +67,7 @@
         android:textColorPrimary="@color/white"
         app:pstsShouldExpand="true"
         app:pstsUnderlineHeight="0dp"
-        app:pstsIndicatorHeight="2dp"
+        app:pstsIndicatorHeight="4dp"
         app:pstsTextAllCaps="false"
         app:pstsUnderlineColor="@color/white"
         app:pstsDividerColor="@color/white"
