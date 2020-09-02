@@ -82,4 +82,7 @@ dependencies {
 
     //progress bar
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+    //tab header
+    implementation 'com.jpardogo.materialtabstrip:library:1.0.9'
 }
