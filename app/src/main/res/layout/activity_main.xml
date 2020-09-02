@@ -68,10 +68,10 @@
         app:pstsShouldExpand="true"
         app:pstsUnderlineHeight="0dp"
         app:pstsIndicatorHeight="2dp"
+        app:pstsTextAllCaps="false"
         app:pstsUnderlineColor="@color/white"
         app:pstsDividerColor="@color/white"
         app:pstsIndicatorColor="@color/white"
         android:layout_below="@id/toobar"/>
-
 
 </RelativeLayout>
