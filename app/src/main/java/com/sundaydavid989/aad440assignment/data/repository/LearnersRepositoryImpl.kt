@@ -3,6 +3,7 @@ package com.sundaydavid989.aad440assignment.data.repository
 import androidx.lifecycle.LiveData
 import com.sundaydavid989.aad440assignment.data.db.LearnersDao
 import com.sundaydavid989.aad440assignment.data.entity.Hours
+import com.sundaydavid989.aad440assignment.data.entity.HoursItem
 import com.sundaydavid989.aad440assignment.data.network.LearnersNetworkDataSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -20,7 +21,7 @@ class LearnersRepositoryImpl(
         }
     }
 
-    override suspend fun getHours(): LiveData<Hours> {
+    override suspend fun getHours(): LiveData<List<HoursItem>> {
        return withContext(Dispatchers.IO) {
            return@withContext learnersDao.getHours()
        }

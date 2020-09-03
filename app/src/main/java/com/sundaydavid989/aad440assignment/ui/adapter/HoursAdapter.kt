@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sundaydavid989.aad440assignment.data.entity.Hours
+import com.sundaydavid989.aad440assignment.data.entity.HoursItem
 import com.sundaydavid989.aad440assignment.databinding.HoursListItemsBinding
+import com.sundaydavid989.aad440assignment.internal.glide.GlideApp
 
-class HoursAdapter(private val context: Context, private val hoursList: Hours)
+class HoursAdapter(private val context: Context, private val hoursList: List<HoursItem>)
     :RecyclerView.Adapter<HoursAdapter.HoursViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HoursViewHolder {
@@ -23,6 +25,9 @@ class HoursAdapter(private val context: Context, private val hoursList: Hours)
             with(hoursList[position]) {
                 binding.topLearnerName.text = name
                 binding.topLearnerTime.text = hours.toString()
+                GlideApp.with(context)
+                    .load(badgeUrl)
+                    .into(binding.topLearnerImage)
             }
         }
     }

@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.sundaydavid989.aad440assignment.data.entity.Hours
+import com.sundaydavid989.aad440assignment.data.entity.HoursItem
 
 @Dao
 interface LearnersDao {
@@ -14,5 +15,5 @@ interface LearnersDao {
     fun upSert(hoursItem: Hours)
 
     @Query("SELECT * FROM learners_hours")
-    fun getHours(): LiveData<Hours>
+    fun getHours(): LiveData<List<HoursItem>>
 }

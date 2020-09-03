@@ -6,9 +6,9 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "learners_hours")
 data class HoursItem(
-    @PrimaryKey(autoGenerate = true)
     val badgeUrl: String,
     val country: String,
+    @PrimaryKey(autoGenerate = true)
     val hours: Int,
     val name: String
 )
