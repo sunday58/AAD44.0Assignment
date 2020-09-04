@@ -4,7 +4,6 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.sundaydavid989.aad440assignment.data.entity.Hours
 import com.sundaydavid989.aad440assignment.data.entity.HoursItem
 import com.sundaydavid989.aad440assignment.databinding.HoursListItemsBinding
 import com.sundaydavid989.aad440assignment.internal.glide.GlideApp

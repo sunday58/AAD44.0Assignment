@@ -10,8 +10,8 @@ import com.sundaydavid989.aad440assignment.internal.NoConnectivityException
 class LearnersNetworkDataSourceImpl(
     private val learnersApiService: LearnersApiService
 ) : LearnersNetworkDataSource {
-    private val _downloadLearnersHours = MutableLiveData<Hours>()
-    override val downloadLearnersHours: LiveData<Hours>
+    private val _downloadLearnersHours = MutableLiveData<Array<HoursItem>>()
+    override val downloadLearnersHours: LiveData<Array<HoursItem>>
         get() = _downloadLearnersHours
 
     override suspend fun fetchHours() {
@@ -20,6 +20,7 @@ class LearnersNetworkDataSourceImpl(
                 .getHoursAsync()
                 .await()
             _downloadLearnersHours.postValue(fetchHours)
+            Log.d("Items", _downloadLearnersHours.postValue(fetchHours).toString())
         }
         catch (e: NoConnectivityException){
             Log.d("connectivity ", "No internet connection")

@@ -20,12 +20,10 @@ class LearnersApplication : Application(), KodeinAware {
 
         bind() from singleton { LearnersDatabase(instance()) }
         bind() from singleton { instance<LearnersDatabase>().learnersDao() }
-        bind<ConnectivityInterceptor>() with singleton {
-            ConnectivityInterceptorImpl(instance())}
+        bind<ConnectivityInterceptor>() with singleton {ConnectivityInterceptorImpl(instance())}
         bind() from singleton { LearnersApiService(instance()) }
         bind<LearnersNetworkDataSource>() with singleton { LearnersNetworkDataSourceImpl(instance()) }
         bind<LearnersRepository>() with singleton { LearnersRepositoryImpl(instance(), instance()) }
         bind() from provider { HoursViewModelFactory(instance()) }
     }
-
 }

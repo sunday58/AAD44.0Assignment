@@ -10,7 +10,7 @@ import com.sundaydavid989.aad440assignment.data.entity.HoursItem
 @Database(
     exportSchema = false,
     entities = [HoursItem::class],
-    version = 1
+    version = 2
 )
 abstract class LearnersDatabase : RoomDatabase() {
     abstract fun learnersDao(): LearnersDao
