@@ -4,34 +4,34 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.sundaydavid989.aad440assignment.data.entity.HoursItem
-import com.sundaydavid989.aad440assignment.databinding.HoursListItemsBinding
+import com.sundaydavid989.aad440assignment.data.entity.SkillItem
+import com.sundaydavid989.aad440assignment.databinding.SkillItemListBinding
 import com.sundaydavid989.aad440assignment.internal.glide.GlideApp
 
-class SkillIQAdapter(private val context: Context, private val hoursList: List<HoursItem>)
-    :RecyclerView.Adapter<SkillIQAdapter.HoursViewHolder>() {
+class SkillIQAdapter(private val context: Context, private val skillList: List<SkillItem>)
+    :RecyclerView.Adapter<SkillIQAdapter.SkillViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HoursViewHolder {
-        val binding = HoursListItemsBinding
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SkillViewHolder {
+        val binding = SkillItemListBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
-        return HoursViewHolder(binding)
+        return SkillViewHolder(binding)
     }
 
-    override fun getItemCount() = hoursList.size
+    override fun getItemCount() = skillList.size
 
-    override fun onBindViewHolder(holder: HoursViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SkillViewHolder, position: Int) {
         with(holder){
-            with(hoursList[position]) {
-                binding.topLearnerName.text = name
-                binding.topLearnerTime.text = hours.toString()
+            with(skillList[position]) {
+                binding.skillLeaderName.text = name
+                binding.SkillLeaderScore.text = score.toString()
                 GlideApp.with(context)
                     .load(badgeUrl)
-                    .into(binding.topLearnerImage)
+                    .into(binding.skillLeaderImage)
             }
         }
     }
 
-    inner class HoursViewHolder(val binding: HoursListItemsBinding)
+    inner class SkillViewHolder(val binding: SkillItemListBinding)
         :RecyclerView.ViewHolder(binding.root)
 
 }

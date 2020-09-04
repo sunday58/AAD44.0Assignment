@@ -6,6 +6,7 @@ import com.sundaydavid989.aad440assignment.data.network.*
 import com.sundaydavid989.aad440assignment.data.repository.LearnersRepository
 import com.sundaydavid989.aad440assignment.data.repository.LearnersRepositoryImpl
 import com.sundaydavid989.aad440assignment.ui.hours.HoursViewModelFactory
+import com.sundaydavid989.aad440assignment.ui.skill.SkillViewModelFactory
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.androidXModule
@@ -25,5 +26,6 @@ class LearnersApplication : Application(), KodeinAware {
         bind<LearnersNetworkDataSource>() with singleton { LearnersNetworkDataSourceImpl(instance()) }
         bind<LearnersRepository>() with singleton { LearnersRepositoryImpl(instance(), instance()) }
         bind() from provider { HoursViewModelFactory(instance()) }
+        bind() from provider { SkillViewModelFactory(instance()) }
     }
 }

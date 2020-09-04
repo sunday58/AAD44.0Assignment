@@ -6,7 +6,7 @@
     tools:context=".ui.skill.SkillFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/hoursRecyclerView"
+        android:id="@+id/skillRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/skill_item_list" />
