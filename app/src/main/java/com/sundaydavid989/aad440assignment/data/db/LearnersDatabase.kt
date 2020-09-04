@@ -5,11 +5,12 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.sundaydavid989.aad440assignment.data.entity.HoursItem
+import com.sundaydavid989.aad440assignment.data.entity.SkillItem
 
 
 @Database(
     exportSchema = false,
-    entities = [HoursItem::class],
+    entities = [HoursItem::class, SkillItem::class],
     version = 2
 )
 abstract class LearnersDatabase : RoomDatabase() {

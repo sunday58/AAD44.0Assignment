@@ -9,6 +9,8 @@
         android:id="@+id/hoursRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/hours_list_items" />
+        tools:listitem="@layout/hours_list_items"
+        android:fitsSystemWindows="true"
+        android:layout_marginBottom="16dp"/>
 
 </FrameLayout>

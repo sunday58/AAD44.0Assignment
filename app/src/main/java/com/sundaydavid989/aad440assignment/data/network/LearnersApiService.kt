@@ -3,6 +3,7 @@ package com.sundaydavid989.aad440assignment.data.network
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.sundaydavid989.aad440assignment.Constants
 import com.sundaydavid989.aad440assignment.data.entity.HoursItem
+import com.sundaydavid989.aad440assignment.data.entity.SkillItem
 import kotlinx.coroutines.Deferred
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -14,6 +15,9 @@ interface LearnersApiService {
 
     @GET("api/hours")
     fun getHoursAsync(): Deferred<Array<HoursItem>>
+
+    @GET("api/skilliq")
+    fun getSkillIQAsync(): Deferred<Array<SkillItem>>
 
     companion object {
         operator fun invoke(
@@ -38,7 +42,7 @@ interface LearnersApiService {
 
             return Retrofit.Builder()
                 .client(okHttpClient)
-                .baseUrl("https://gadsapi.herokuapp.com/")
+                .baseUrl(Constants.URL)
                 .addCallAdapterFactory(CoroutineCallAdapterFactory())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
