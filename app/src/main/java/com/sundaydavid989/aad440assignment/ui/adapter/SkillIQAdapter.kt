@@ -3,6 +3,7 @@ package com.sundaydavid989.aad440assignment.ui.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.sundaydavid989.aad440assignment.data.entity.SkillItem
 import com.sundaydavid989.aad440assignment.databinding.SkillItemListBinding
@@ -27,6 +28,11 @@ class SkillIQAdapter(private val context: Context, private val skillList: List<S
                 GlideApp.with(context)
                     .load(badgeUrl)
                     .into(binding.skillLeaderImage)
+
+                holder.itemView.setOnClickListener {
+                    Toast.makeText(context, score.toString(),
+                        Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }

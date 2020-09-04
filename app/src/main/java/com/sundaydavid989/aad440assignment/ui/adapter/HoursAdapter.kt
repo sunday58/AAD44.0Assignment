@@ -3,6 +3,7 @@ package com.sundaydavid989.aad440assignment.ui.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.sundaydavid989.aad440assignment.data.entity.HoursItem
 import com.sundaydavid989.aad440assignment.databinding.HoursListItemsBinding
@@ -27,6 +28,11 @@ class HoursAdapter(private val context: Context, private val hoursList: List<Hou
                 GlideApp.with(context)
                     .load(badgeUrl)
                     .into(binding.topLearnerImage)
+
+                holder.itemView.setOnClickListener {
+                    Toast.makeText(context, hours.toString(),
+                        Toast.LENGTH_SHORT).show()
+                }
             }
         }
     }
