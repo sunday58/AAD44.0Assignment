@@ -13,4 +13,14 @@
         <item name="android:windowFullscreen">true</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     </style>
+
+    //for edit text
+    <style name="ErrorText" parent="TextAppearance.Design.Error">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="EditTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="errorTextAppearance">@style/ErrorText</item>
+    </style>
 </resources>
