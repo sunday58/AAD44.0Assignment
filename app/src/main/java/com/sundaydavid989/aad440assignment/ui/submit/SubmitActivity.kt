@@ -48,6 +48,7 @@ class SubmitActivity : AppCompatActivity() {
             val yesBtn = dialog.findViewById<MaterialButton>(R.id.confirmSubmit)
             val noBtn = dialog.findViewById<ImageView>(R.id.cancelSubmit)
             yesBtn.setOnClickListener {
+                getData()
                 Toast.makeText(applicationContext, "Submitting", Toast.LENGTH_SHORT).show()
                 dialog.dismiss()
             }
@@ -80,6 +81,25 @@ class SubmitActivity : AppCompatActivity() {
         )
     }
 
+    private fun getData(){
+        val firstName = binding.firstName.text.toString()
+        val lastName = binding.lastName.text.toString()
+        val email = binding.email.text.toString()
+        val github = binding.github.text.toString()
+
+        if (!email.isEmailValid()){
+            toastMessage("Email not valid")
+        }
+        if (firstName.isEmpty()
+            || lastName.isEmpty()
+            || github.isEmpty()){
+            toastMessage("items can not be empty")
+        }
+        else {
+            submit(firstName, lastName, email, github)
+        }
+    }
+
     private fun String.isEmailValid(): Boolean {
         return !TextUtils.isEmpty(this)
                 && android.util.Patterns.EMAIL_ADDRESS.matcher(this).matches()
@@ -95,6 +115,10 @@ class SubmitActivity : AppCompatActivity() {
         val dialog = AlertDialog.Builder(this)
         dialog.setView(R.layout.successful_dialog)
         dialog.show()
+    }
+
+    private fun toastMessage(message: String){
+        Toast.makeText(applicationContext, message, Toast.LENGTH_SHORT).show()
     }
 
 }

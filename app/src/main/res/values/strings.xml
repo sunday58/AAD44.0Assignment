@@ -11,4 +11,5 @@
     <string name="back_button">back button</string>
     <string name="google_logo">google logo</string>
     <string name="project_submission">Project Submission</string>
+    <string name="submit">Submit</string>
 </resources>
