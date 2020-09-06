@@ -3,7 +3,6 @@ package com.sundaydavid989.aad440assignment.data.network
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.sundaydavid989.aad440assignment.data.entity.Hours
 import com.sundaydavid989.aad440assignment.data.entity.HoursItem
 import com.sundaydavid989.aad440assignment.data.entity.SkillItem
 import com.sundaydavid989.aad440assignment.internal.NoConnectivityException
