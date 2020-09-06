@@ -24,7 +24,8 @@ class HoursAdapter(private val context: Context, private val hoursList: List<Hou
         with(holder){
             with(hoursList[position]) {
                 binding.topLearnerName.text = name
-                binding.topLearnerTime.text = hours.toString()
+                val hours = hours.toString() + "learning hours, " + country
+                binding.topLearnerTime.text = hours
                 GlideApp.with(context)
                     .load(badgeUrl)
                     .into(binding.topLearnerImage)
