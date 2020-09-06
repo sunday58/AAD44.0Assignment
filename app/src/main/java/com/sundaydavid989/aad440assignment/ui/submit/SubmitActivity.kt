@@ -41,23 +41,40 @@ class SubmitActivity : AppCompatActivity() {
 
     private fun sendSubmit(){
         binding.submit.setOnClickListener {
-          val dialog = Dialog(this)
-            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-            dialog.setCancelable(false)
-            dialog.setContentView(R.layout.fragment_submit_dialog)
-            val yesBtn = dialog.findViewById<MaterialButton>(R.id.confirmSubmit)
-            val noBtn = dialog.findViewById<ImageView>(R.id.cancelSubmit)
-            yesBtn.setOnClickListener {
-                getData()
-                Toast.makeText(applicationContext, "Submitting", Toast.LENGTH_SHORT).show()
-                dialog.dismiss()
+            val firstName = binding.firstName.text.toString()
+            val lastName = binding.lastName.text.toString()
+            val email = binding.email.text.toString()
+            val github = binding.github.text.toString()
+
+            if (!email.isEmailValid()){
+                toastMessage("Email not valid")
             }
-            noBtn.setOnClickListener {
-                dialog.dismiss()
+            if (firstName.isEmpty()
+                || lastName.isEmpty()
+                || github.isEmpty()){
+                toastMessage("items can not be empty")
             }
-            dialog.show()
-            val window = dialog.window
-            window!!.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+            else {
+                val dialog = Dialog(this)
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+                dialog.setCancelable(false)
+                dialog.setContentView(R.layout.fragment_submit_dialog)
+                val yesBtn = dialog.findViewById<MaterialButton>(R.id.confirmSubmit)
+                val noBtn = dialog.findViewById<ImageView>(R.id.cancelSubmit)
+                yesBtn.setOnClickListener {
+                    submit(firstName, lastName, email, github)
+                    Toast.makeText(applicationContext, "Submitting", Toast.LENGTH_SHORT).show()
+                    dialog.dismiss()
+                }
+                noBtn.setOnClickListener {
+                    dialog.dismiss()
+                }
+                dialog.show()
+                val window = dialog.window
+                window!!.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
+
+            }
+
         }
     }
 
@@ -79,25 +96,6 @@ class SubmitActivity : AppCompatActivity() {
                 }
             }
         )
-    }
-
-    private fun getData(){
-        val firstName = binding.firstName.text.toString()
-        val lastName = binding.lastName.text.toString()
-        val email = binding.email.text.toString()
-        val github = binding.github.text.toString()
-
-        if (!email.isEmailValid()){
-            toastMessage("Email not valid")
-        }
-        if (firstName.isEmpty()
-            || lastName.isEmpty()
-            || github.isEmpty()){
-            toastMessage("items can not be empty")
-        }
-        else {
-            submit(firstName, lastName, email, github)
-        }
     }
 
     private fun String.isEmailValid(): Boolean {

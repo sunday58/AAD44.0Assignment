@@ -24,7 +24,7 @@ class SkillIQAdapter(private val context: Context, private val skillList: List<S
         with(holder){
             with(skillList[position]) {
                 binding.skillLeaderName.text = name
-                val skill = score.toString() + "skill IQ Score, " + country
+                val skill = "$score skill IQ Score, $country"
                 binding.SkillLeaderScore.text = skill
                 GlideApp.with(context)
                     .load(badgeUrl)
