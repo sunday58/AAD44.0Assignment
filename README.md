@@ -16,7 +16,7 @@ Clone the repository
 * https://github.com/sunday58/AAD44.0Assignment.git
 
 Install apk
-* app -> build -> output -> apk -> release
+* app  ->  release
 
 # SDK Requirement
 * Minimum SDK Requirement - android API 19 (KitKat)
