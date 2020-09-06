@@ -3,6 +3,7 @@ package com.sundaydavid989.aad440assignment.ui.submit
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.Window
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -60,7 +61,7 @@ class SubmitActivity : AppCompatActivity() {
     }
 
     private fun submit(firstName: String, lastName: String, email: String, linkToGithub: String){
-        val retrofit = SubmitApiService.ServiceBuilder
+        val retrofit = SubmitApiService
             .buildService(SubmitApiService::class.java)
         retrofit.submitAssignment(firstName, lastName, email, linkToGithub).enqueue(
             object : Callback<Void>{
@@ -69,18 +70,25 @@ class SubmitActivity : AppCompatActivity() {
                 }
 
                 override fun onResponse(call: Call<Void>, response: Response<Void>) {
-                     successDialog()
-
+                    if (response.isSuccessful){
+                        successDialog()
+                    }else{
+                        failureDialog()
+                    }
                 }
             }
         )
+    }
+
+    private fun String.isEmailValid(): Boolean {
+        return !TextUtils.isEmpty(this)
+                && android.util.Patterns.EMAIL_ADDRESS.matcher(this).matches()
     }
 
     private fun failureDialog(){
         val dialog = AlertDialog.Builder(this)
         dialog.setView(R.layout.unsuccessful_dialog)
         dialog.show()
-
     }
 
     private fun successDialog(){
