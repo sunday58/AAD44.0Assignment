@@ -18,3 +18,10 @@ Clone the repository
 Install apk
 * app -> build -> output -> apk -> release
 
+# SDK Requirement
+* Minimum SDK Requirement - android API 19 (KitKat)
+* Target SDK - android API 29 (Android 10)
+
+# Contribution
+The project is open source so fell free to add your contribution or open issue.
+
