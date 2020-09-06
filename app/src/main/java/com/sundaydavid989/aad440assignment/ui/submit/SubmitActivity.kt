@@ -1,13 +1,22 @@
 package com.sundaydavid989.aad440assignment.ui.submit
 
+import android.app.Dialog
 import android.content.Intent
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.sundaydavid989.aad440assignment.MainActivity
 import com.sundaydavid989.aad440assignment.R
 import com.sundaydavid989.aad440assignment.data.network.SubmitApiService
 import com.sundaydavid989.aad440assignment.databinding.ActivitySubmitBinding
+import kotlinx.android.synthetic.main.fragment_submit_dialog.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -21,6 +30,7 @@ class SubmitActivity : AppCompatActivity() {
         binding = ActivitySubmitBinding.inflate(layoutInflater)
         val view = binding.root
 
+        sendSubmit()
         goBack()
         setContentView(view)
     }
@@ -28,6 +38,27 @@ class SubmitActivity : AppCompatActivity() {
     private fun goBack(){
         binding.goBack.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
+        }
+    }
+
+    private fun sendSubmit(){
+        binding.submit.setOnClickListener {
+          val dialog = Dialog(this)
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog.setCancelable(false)
+            dialog.setContentView(R.layout.fragment_submit_dialog)
+            val yesBtn = dialog.findViewById<MaterialButton>(R.id.confirmSubmit)
+            val noBtn = dialog.findViewById<ImageView>(R.id.cancelSubmit)
+            yesBtn.setOnClickListener {
+                Toast.makeText(applicationContext, "Submitting", Toast.LENGTH_SHORT).show()
+                dialog.dismiss()
+            }
+            noBtn.setOnClickListener {
+                dialog.dismiss()
+            }
+            dialog.show()
+            val window = dialog.window
+            window!!.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT)
         }
     }
 

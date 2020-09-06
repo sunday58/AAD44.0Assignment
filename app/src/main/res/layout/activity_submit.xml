@@ -57,7 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_below="@id/title"
-                android:background="@color/white"
+                android:background="@drawable/view_shape"
                 android:layout_marginTop="8dp"/>
         </RelativeLayout>
 
@@ -181,9 +181,12 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/github_layout"
                     android:text="Submit"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    app:backgroundTint="null"
                     android:gravity="center"
                     android:layout_centerInParent="true"
-                    app:backgroundTint="@color/colorAccent"
+                    android:background="@drawable/view_button_shape"
                     android:paddingStart="24dp"
                     android:paddingEnd="24dp"
                     android:paddingTop="8dp"

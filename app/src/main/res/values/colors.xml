@@ -5,4 +5,7 @@
     <color name="colorAccent">#ED8907</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+    <color name="accentLight">#6D5E4F</color>
+    <color name="success">#05920B</color>
+    <color name="fail">#FA0404</color>
 </resources>
