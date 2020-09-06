@@ -12,4 +12,5 @@ ALC Project showing list of top 20 learners with most hours of content watched a
 <img width="375" alt="Launch" src="https://user-images.githubusercontent.com/46400048/92334931-3d21cd80-f08a-11ea-8fad-dc4abba86b78.png">
 
 # Installation
-Clone the repository 
+Clone the repository
+* https://github.com/sunday58/AAD44.0Assignment.git
