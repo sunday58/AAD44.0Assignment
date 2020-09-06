@@ -2,21 +2,18 @@ package com.sundaydavid989.aad440assignment.ui.submit
 
 import android.app.Dialog
 import android.content.Intent
-import android.media.Image
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.sundaydavid989.aad440assignment.MainActivity
 import com.sundaydavid989.aad440assignment.R
 import com.sundaydavid989.aad440assignment.data.network.SubmitApiService
 import com.sundaydavid989.aad440assignment.databinding.ActivitySubmitBinding
-import kotlinx.android.synthetic.main.fragment_submit_dialog.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -68,15 +65,28 @@ class SubmitActivity : AppCompatActivity() {
         retrofit.submitAssignment(firstName, lastName, email, linkToGithub).enqueue(
             object : Callback<Void>{
                 override fun onFailure(call: Call<Void>, t: Throwable) {
-                    TODO("Not yet implemented")
+                    failureDialog()
                 }
 
                 override fun onResponse(call: Call<Void>, response: Response<Void>) {
-                     val submitForm = response.body()
+                     successDialog()
 
                 }
             }
         )
+    }
+
+    private fun failureDialog(){
+        val dialog = AlertDialog.Builder(this)
+        dialog.setView(R.layout.unsuccessful_dialog)
+        dialog.show()
+
+    }
+
+    private fun successDialog(){
+        val dialog = AlertDialog.Builder(this)
+        dialog.setView(R.layout.successful_dialog)
+        dialog.show()
     }
 
 }
