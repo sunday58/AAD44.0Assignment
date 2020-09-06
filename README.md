@@ -14,6 +14,7 @@ ALC Project showing list of top 20 learners with most hours of content watched a
 # Installation
 Clone the repository
 * https://github.com/sunday58/AAD44.0Assignment.git
+
 Install apk
 * app
 * build
