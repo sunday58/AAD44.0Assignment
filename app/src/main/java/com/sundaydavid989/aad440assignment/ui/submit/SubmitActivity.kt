@@ -48,11 +48,13 @@ class SubmitActivity : AppCompatActivity() {
 
             if (!email.isEmailValid()){
                 toastMessage("Email not valid")
+                return@setOnClickListener
             }
             if (firstName.isEmpty()
                 || lastName.isEmpty()
                 || github.isEmpty()){
                 toastMessage("items can not be empty")
+                return@setOnClickListener
             }
             else {
                 val dialog = Dialog(this)
