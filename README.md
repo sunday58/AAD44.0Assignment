@@ -23,5 +23,5 @@ Install apk
 * Target SDK - android API 29 (Android 10)
 
 # Contribution
-The project is open source so fell free to add your contribution or open issue.
+The project is open source so feel free to add your contribution or open issue.
 
