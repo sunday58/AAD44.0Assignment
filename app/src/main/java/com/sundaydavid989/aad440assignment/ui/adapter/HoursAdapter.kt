@@ -31,7 +31,7 @@ class HoursAdapter(private val context: Context, private val hoursList: List<Hou
                     .into(binding.topLearnerImage)
 
                 holder.itemView.setOnClickListener {
-                    Toast.makeText(context, hours.toString(),
+                    Toast.makeText(context, hours,
                         Toast.LENGTH_SHORT).show()
                 }
             }

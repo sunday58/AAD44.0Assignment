@@ -1,21 +1,17 @@
 package com.sundaydavid989.aad440assignment.ui.hours
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.sundaydavid989.aad440assignment.R
 import com.sundaydavid989.aad440assignment.databinding.HoursFragmentBinding
 import com.sundaydavid989.aad440assignment.ui.adapter.HoursAdapter
 import com.sundaydavid989.aad440assignment.ui.base.ScopedFragment
 import kotlinx.coroutines.launch
-import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.closestKodein
 import org.kodein.di.generic.instance
