@@ -16,8 +16,5 @@ Clone the repository
 * https://github.com/sunday58/AAD44.0Assignment.git
 
 Install apk
-* app
-* build
-* output
-* apk
-* release
+* app -> build -> output -> apk -> release
+
