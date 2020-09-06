@@ -12,4 +12,12 @@
     <string name="google_logo">google logo</string>
     <string name="project_submission">Project Submission</string>
     <string name="submit">Submit</string>
+    <string name="submission_not_successful">Submission not Successful</string>
+    <string name="submission_successful">Submission Successful</string>
+    <string name="leaderboard">LEADERBOARD</string>
+    <string name="close_buttton">close buttton</string>
+    <string name="are_you_sure">Are you sure ?</string>
+    <string name="yes">Yes</string>
+    <string name="top_learner_icon">top Learner icon</string>
+    <string name="skilled_leader_badge">skilled leader badge</string>
 </resources>

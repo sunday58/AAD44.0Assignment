@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     app:cardElevation="8dp"
     app:cardCornerRadius="5dp"
     android:layout_marginTop="12dp"
@@ -21,7 +22,8 @@
             android:layout_height="100dp"
             android:layout_centerVertical="true"
             android:layout_marginStart="16dp"
-            android:src="@drawable/skill_iq_trimmed"/>
+            android:src="@drawable/skill_iq_trimmed"
+            android:contentDescription="@string/skilled_leader_badge"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -35,7 +37,7 @@
                 android:id="@+id/skillLeaderName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Emeka John"
+                tools:text="Emeka John"
                 android:textStyle="bold"
                 android:textSize="16sp" />
 
@@ -43,7 +45,7 @@
                 android:id="@+id/SkillLeaderScore"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="223, learning hours Nigeria"
+                tools:text="223, learning hours Nigeria"
                 android:layout_marginTop="4dp"/>
 
         </LinearLayout>
